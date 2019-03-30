@@ -8,9 +8,15 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log(catsList);
       let catdiv1 = document.getElementById(
         "cat1");
-      let catImg = document.createElement('img');
-      catImg.src = catsList[0].photo;
-      catdiv1.appendChild(catImg);
+      let catdiv2 = document.getElementById("cat2");
+      let catdiv3 = document.getElementById("cat3");
+      let divArray = [catdiv1, catdiv2, catdiv3];
+      for (var i = 0; i < divArray.length; i++) {
+        divArray[i].innerHTML = null;
+        let catImg = document.createElement('img');
+        catImg.src = catsList[i].photo;
+        divArray[i].appendChild(catImg);
+      }
     });
   });
 });
